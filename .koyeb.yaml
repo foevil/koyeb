@@ -1,0 +1,12 @@
+name: terminal-app
+services:
+  - name: web-terminal
+    dockerfile_path: ./Dockerfile
+    build_context: .
+    ports:
+      - port: 8080
+        http_options:
+          path: /
+    env:
+      - key: TERMINAL_PASSWORD
+        value: mysecretpassword
